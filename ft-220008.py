@@ -12,3 +12,13 @@ def draw_barrel(bag):
     except IndexError:
         logging.error("Все бочонки были вытянуты.")
         return None
+
+def main():
+    while True:
+        try:
+            n = int(input("Введите натуральное число N для количества бочонков: "))
+            if n <= 0:
+                raise ValueError
+            break
+        except ValueError:
+            print("Неверный ввод. Пожалуйста, введите натуральное число.")
