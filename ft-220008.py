@@ -22,3 +22,18 @@ def main():
             break
         except ValueError:
             print("Неверный ввод. Пожалуйста, введите натуральное число.")
+    bag = list(range(1, n + 1))
+    random.shuffle(bag)
+    print("Нажмите Enter для вытаскивания бочонка или введите 'exit' для выхода.")
+
+    while bag:
+        user_input = input()
+        if user_input.lower() == 'exit':
+            break
+        print(f"Вы вытянули бочонок: {draw_barrel(bag)}")
+
+    logging.info("Игра завершена.")
+
+
+if __name__ == "__main__":
+    main()
